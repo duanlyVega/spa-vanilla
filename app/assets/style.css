@@ -1,0 +1,211 @@
+/* Estilos generales para el documento HTML */
+html {
+  box-sizing: border-box; /* Caja de modelo de borde */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Familia de fuentes predeterminada */
+  font-size: 16px; /* Tamaño de fuente base */
+}
+
+/* Hereda el box-sizing para todos los elementos */
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+/* Estilos generales para el cuerpo de la página */
+body {
+  margin: 0; /* Elimina el margen predeterminado del cuerpo */
+  overflow-x: hidden; /* Oculta el desbordamiento horizontal */
+  line-height: 1.6; /* Altura de línea */
+}
+
+/* Estilos para los enlaces */
+a {
+  color: #01579b; /* Color del enlace */
+  transition: color 0.3s ease; /* Transición de color suave */
+  text-decoration: none; /* Elimina el subrayado predeterminado */
+}
+
+a:hover {
+  color: #00b0ff; /* Cambia el color al pasar el ratón */
+  text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+/* Estilos para encabezados */
+h1 {
+  text-align: center; /* Centra el texto */
+  margin-bottom: 1rem; /* Margen inferior */
+}
+
+/* Estilos para imágenes */
+img {
+  max-width: 100%; /* Ancho máximo */
+  height: auto; /* Altura automática para mantener la proporción */
+}
+
+/* Estilos para mensajes de error */
+.error {
+  padding: 1rem; /* Relleno */
+  font-size: 1.5rem; /* Tamaño de fuente */
+  font-weight: bold; /* Peso de fuente */
+  text-align: center; /* Centra el texto */
+  color: #fff; /* Color del texto */
+  background-color: #dc3545; /* Color de fondo */
+}
+
+.error mark {
+  padding: 0.5rem; /* Relleno */
+  border-radius: 0.5rem; /* Borde redondeado */
+  display: inline-block; /* Mostrar como elemento en línea */
+  color: #fff; /* Color del texto */
+  background-color: #01579b; /* Color de fondo */
+}
+
+/* Estilos para formularios de búsqueda */
+.form-search {
+  padding: 1rem; /* Relleno */
+  text-align: center; /* Centra el texto */
+}
+
+.form-search input {
+  width: 100%; /* Ancho completo */
+  padding: 0.5rem; /* Relleno */
+  border-radius: 0.25rem; /* Borde redondeado */
+  font-size: 1rem; /* Tamaño de fuente */
+  margin-bottom: 1rem; /* Margen inferior */
+}
+
+/* Estilos para contenedores con diseño de rejilla */
+.grid-fluid {
+  margin: 1rem auto; /* Margen */
+  max-width: 90%; /* Ancho máximo */
+  display: grid; /* Mostrar como rejilla */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas flexibles */
+  gap: 1rem; /* Espacio entre elementos */
+}
+
+/* Estilos para encabezado */
+.header {
+  padding: 1rem; /* Relleno */
+  margin: 0.5rem; /* Margen */
+  top: 0; /* Posiciona en la parte superior */
+  position: sticky; /* Posición fija */
+  text-align: center; /* Centra el texto */
+  background-color: #fff; /* Color de fondo */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.header > * {
+  margin: 1rem auto; /* Margen */
+}
+
+/* Estilos para cargador */
+.loader {
+  margin: 1rem auto; /* Margen */
+  display: block; /* Mostrar como bloque */
+  width: 4rem; /* Ancho */
+  height: 4rem; /* Altura */
+}
+
+/* Estilos para tarjeta de publicación */
+.post-card {
+  padding: 1rem; /* Relleno */
+  margin: 1rem auto; /* Margen */
+  width: 80%; /* Ancho */
+  background-color: #eceff1; /* Color de fondo */
+  border-radius: 20px; /* Borde redondeado */
+  overflow: hidden; /* Ocultar desbordamiento */
+  box-shadow: 0 0 25px #c3d9db; /* Sombra */
+}
+
+.post-card p {
+  display: flex; /* Mostrar como flexbox */
+  justify-content: space-between; /* Justifica el contenido */
+}
+
+/* Estilos para página de publicación */
+.post-page {
+  margin: 1rem auto; /* Margen */
+  padding: 1rem; /* Relleno */
+  width: 80%; /* Ancho */
+  background-color: #eceff1; /* Color de fondo */
+}
+
+.post-page > aside {
+  margin: auto; /* Margen automático */
+  width: 60%; /* Ancho */
+  text-align: center; /* Centra el texto */
+}
+
+.post-page > hr {
+  border: thick solid #cfd8dc; /* Borde */
+  margin: 2rem auto; /* Margen */
+  width: 80%; /* Ancho */
+}
+
+.post-page time {
+  margin: 1rem auto; /* Margen */
+  display: block; /* Mostrar como bloque */
+}
+
+.post-page > article {
+  padding: 0.2rem; /* Relleno */
+}
+
+.post-page img,
+.post-page audio,
+.wp-block-image,
+.post-page iframe,
+.post-page video {
+  margin: auto !important; /* Margen */
+  display: block !important; /* Mostrar como bloque */
+  max-width: 100% !important; /* Ancho máximo */
+}
+
+.wp-block-image,
+.wp-element-caption {
+  margin-left: auto !important; /* Margen izquierdo */
+  margin-right: auto !important; /* Margen derecho */
+}
+
+.flex-box{
+  margin: 1rem;
+  padding: 1rem ;
+  background-color: #fff;
+  display: flexbox;
+  justify-content: center;
+  flex-flow: row nowrap;
+}
+
+.flex-box > article{
+background-color: #cfd8dc;
+padding: 1rem;
+margin: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
