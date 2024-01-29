@@ -10,9 +10,9 @@ function serviceWorker() {
       .catch((err) => console.log("Error al tratar de registar el sw", err));
   }
 }
+serviceWorker();
 
 d.addEventListener("DOMContentLoaded", (e) => {
-  serviceWorker();
   App();
 });
 w.addEventListener("hashchange", () => {

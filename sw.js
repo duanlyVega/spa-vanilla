@@ -1,33 +1,23 @@
 const CACHE_NAME = "v1_cache_spa_vanilla",
   urlsToCache = [
     "./",
-    "./app/assets/style.css",
-    "./app/index.js",
-    "./app/assets/ball-triangle.svg",
-
-    "./app/assets/javascript.png",
-    "./app/assets/ios/16.png",
-    "./app/assets/ios/20.png",
-    "./app/assets/ios/29.png",
-    "./app/assets/ios/32.png",
-    "./app/assets/ios/40.png",
-    "./app/assets/ios/50.png",
-
-    "./app/assets/android/android-launchericon-48-48-png",
-    "./app/assets/android/android-launchericon-72-72-png",
-    "./app/assets/android/android-launchericon-96-96-png",
-    "./app/assets/android/android-launchericon-144-144-png",
-    "./app/assets/android/android-launchericon-192-192-png",
-    "./app/assets/android/android-launchericon-512-512-png",
+    "/app/assets/style.css",
+    "/app/index.js",
+    "/app/assets/ball-triangle.svg",
+    "/app/assets/javascript.png",
+    "/app/assets/android/android-launchericon-48-48-png",
+    "/app/assets/android/android-launchericon-72-72-png",
+    "/app/assets/android/android-launchericon-96-96-png",
+    "/app/assets/android/android-launchericon-144-144-png",
+    "/app/assets/android/android-launchericon-192-192-png",
+    "/app/assets/android/android-launchericon-512-512-png",
   ];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(
     caches
       .open(CACHE_NAME)
-      .then((cache) => {
-        return cache.addAll(urlsToCache).then(() => self.skipWaiting());
-      })
+      .then((cache) => cache.addAll(urlsToCache).then(() => self.skipWaiting()))
       .catch((err) => console.log("Falló registro de cache", err))
   );
 });
