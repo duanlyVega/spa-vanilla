@@ -60,7 +60,8 @@ export async function Rooter() {
       },
     });
   } else if (hash === "#/contact") {
-    $main.innerHTML = ContactForm()
+    html += ContactForm()
+    $main.innerHTML = html
   } else {
     await Ajax({
       url: `${api.POST}?slug=${hash.slice(2)}`,
