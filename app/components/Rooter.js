@@ -56,12 +56,12 @@ export async function Rooter() {
         } else {
           search.forEach((getPost) => (html += SearchCard(getPost)));
         }
-        $main.insertAdjacentHTML("afterend",html)
+        $main.innerHTML = html;
       },
     });
   } else if (hash === "#/contact") {
     html += ContactForm()
-    $main.innerHTML = html
+    $main.insertAdjacentElement("afterend",html)
   } else {
     await Ajax({
       url: `${api.POST}?slug=${hash.slice(2)}`,
