@@ -61,7 +61,7 @@ export async function Rooter() {
     });
   } else if (hash === "#/contact") {
     html += ContactForm()
-    $main.insertAdjacentElement("afterend",html)
+    $main.insertAdjacentHTML("afterend",html)
   } else {
     await Ajax({
       url: `${api.POST}?slug=${hash.slice(2)}`,
