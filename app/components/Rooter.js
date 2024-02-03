@@ -4,7 +4,7 @@ import api from "../helpers/wp_api.js";
 import { PostCard } from "./PostCard.js";
 import { Post } from "./Post.js";
 import { SearchCard } from "./SearchCard.js";
-
+import {ContactForm} from "./ContactForm.js"
 export async function Rooter() {
   let { hash } = location;
 
@@ -60,7 +60,7 @@ export async function Rooter() {
       },
     });
   } else if (hash === "#/contact") {
-    $main.innerHTML = "<h2>section de contacto</h2>";
+    $main.innerHTML = ContactForm()
   } else {
     await Ajax({
       url: `${api.POST}?slug=${hash.slice(2)}`,
