@@ -132,7 +132,7 @@ export function ContactForm() {
             <input type="submit" value="Enviar" />
             <input type="hidden" name="_template" value="basic">
             <div class="contact-form-loader none">
-              <img src="app/assets/loader.svg" alt="Cargando" />
+              <img src="/app/assets/ball-triangle.svg" alt="Cargando" />
             </div>
             <div class="contact-form-response none">
               <p>Los datos han sido enviados</p>
@@ -140,7 +140,7 @@ export function ContactForm() {
           `;
   
     function validationForm() {
-      const $form = d.querySelector(".contact-form"),
+      const $form = d.querySelector(".contact-form-loader"),
         $inputs = d.querySelectorAll(".contact-form [required]");
   
       $inputs.forEach((input) => {
