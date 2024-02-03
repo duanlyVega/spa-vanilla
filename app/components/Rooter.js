@@ -60,7 +60,7 @@ export async function Rooter() {
       },
     });
   } else if (hash === "#/contact") {
-    html += ContactForm()
+    html += ContactForm().innerHTML
     $main.insertAdjacentHTML("afterend",html)
   } else {
     await Ajax({
