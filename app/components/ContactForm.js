@@ -182,7 +182,7 @@ export function ContactForm() {
       d.addEventListener("submit", (e) => {
         e.preventDefault();
         if (e.target === $form) {
-          const $loader = d.querySelector(".contact-form-loader"),
+          const $loader = d.querySelector(".loader"),
             $response = d.querySelector(".contact-form-response");
   
           $loader.classList.remove("none");
