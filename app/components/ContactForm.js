@@ -6,7 +6,7 @@ export function ContactForm() {
     $form.classList.add("contact-form");
     $syles.innerHTML = `
     
-    /* **********     ContactForm Validations     ********** */
+
     .contact-form {
       --form-ok-color: #4caf50;
       --form-error-color: #f44336;
@@ -186,7 +186,7 @@ export function ContactForm() {
             $response = d.querySelector(".contact-form-response");
   
           $loader.classList.remove("none");
-          fetch("https://formsubmit.co/ajax/use.d.v.a.dev@gmail.com", {
+          fetch("https://formsubmit.co/ajax/thyronmiguelvegasantana@gmail.com", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
