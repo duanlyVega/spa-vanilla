@@ -4,6 +4,95 @@ export function ContactForm() {
       $syles = d.getElementById("dynamic-styles");
     console.log($syles);
     $form.classList.add("contact-form");
+    $syles.style = `
+    
+    /* **********     ContactForm Validations     ********** */
+    .contact-form {
+      --form-ok-color: #4caf50;
+      --form-error-color: #f44336;
+      margin-left: auto;
+      margin-right: auto;
+      width: 80%;
+    }
+    
+    .contact-form > * {
+      padding: 0.5rem;
+      margin: 1rem auto;
+      display: block;
+      width: 100%;
+    }
+    
+    .contact-form textarea {
+      resize: none;
+    }
+    
+    .contact-form legend,
+    .contact-form-response {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+    }
+    
+    .contact-form input,
+    .contact-form textarea {
+      font-size: 1rem;
+      font-family: sans-serif;
+    }
+    
+    .contact-form input[type="submit"] {
+      width: 50%;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
+    .contact-form *::placeholder {
+      color: #000;
+    }
+    
+    .contact-form [required]:user-valid {
+      border: thin solid var(--form-ok-color);
+    }
+    
+    .contact-form [required]:user-invalid {
+      border: thin solid var(--form-error-color);
+    }
+    
+    .contact-form-error {
+      margin-top: -1rem;
+      font-size: 80%;
+      background-color: var(--form-error-color);
+      color: #fff;
+      transition: all 800ms ease;
+    }
+    
+    .contact-form-error.is-active {
+      display: block;
+      animation: show-message 1s 1 normal 0s ease-out both;
+    }
+    
+    .none {
+      display: none;
+    }
+    
+    @keyframes show-message {
+      0% {
+        visibility: hidden;
+        opacity: 0;
+      }
+    
+      100% {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+    
+    .loading {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    
+    `
   
   
   
