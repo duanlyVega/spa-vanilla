@@ -4,7 +4,7 @@ export function ContactForm() {
       $syles = d.getElementById("dynamic-styles");
     console.log($syles);
     $form.classList.add("contact-form");
-    $syles.style = `
+    $syles.innerHTML = `
     
     /* **********     ContactForm Validations     ********** */
     .contact-form {
