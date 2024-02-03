@@ -56,7 +56,7 @@ export async function Rooter() {
         } else {
           search.forEach((getPost) => (html += SearchCard(getPost)));
         }
-        $main.insertAdjacentElement("afterend",html)
+        $main.insertAdjacentHTML("afterend",html)
       },
     });
   } else if (hash === "#/contact") {
