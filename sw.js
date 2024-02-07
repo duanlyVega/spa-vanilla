@@ -1,6 +1,6 @@
 const CACHE_NAME = "v1_cache_spa_vanilla",
   urlsToCache = [
-    "./index.html"
+    "./index.html",
     "./",
     "./app/assets/style.css",
     "./app/index.js",
@@ -45,17 +45,41 @@ self.addEventListener("activate", (e) => {
   );
 });
 
-//cuando el navegador recupera una url
+
+// cuando el navegador recupera una url
 self.addEventListener("fetch", (e) => {
-  //Responder ya sea con el objeto en caché o continuar y buscar la url real
-  e.respondWith(
-    caches.match(e.request).then((res) => {
-      if (res) {
-        //recuperar del cache
-        return res;
-      }
-      //recuperar de la petición a la url
-      return fetch(e.request);
-    })
-  );
-});
+  // Responder ya sea con el objeto en caché o continuar y buscar la url real
+    e.respondWith(
+        caches.match(e.request)
+              .then((res) => {
+                      if (res) {
+                                // recuperar del cache
+                                          return res;
+                                                  }
+                                                          // recuperar de la petición a la url
+                                                                  return fetch(e.request)
+                                                                            .then((fetchRes) => {
+                                                                                        // Verificar si la respuesta es válida
+                                                                                                    if (!fetchRes || fetchRes.status !== 200 || fetchRes.type !== "basic") {
+                                                                                                                  return fetchRes; // Retornar la respuesta, que puede ser un error
+                                                                                                                              }
+
+                                                                                                                                          // Clonar la respuesta para poder almacenarla en caché y retornarla
+                                                                                                                                                      const resToCache = fetchRes.clone();
+
+                                                                                                                                                                  // Abrir el caché y almacenar la respuesta clonada
+                                                                                                                                                                              caches.open(CACHE_NAME)
+                                                                                                                                                                                            .then((cache) => {
+                                                                                                                                                                                                            cache.put(e.request, resToCache);
+                                                                                                                                                                                                                          });
+
+                                                                                                                                                                                                                                      // Retornar la respuesta original
+                                                                                                                                                                                                                                                  return fetchRes;
+                                                                                                                                                                                                                                                            })
+                                                                                                                                                                                                                                                                      .catch((err) => {
+                                                                                                                                                                                                                                                                                  console.error("Error al realizar la solicitud:", err);
+                                                                                                                                                                                                                                                                                              // Aquí podrías retornar una página de error personalizada
+                                                                                                                                                                                                                                                                                                        });
+                                                                                                                                                                                                                                                                                                              })
+                                                                                                                                                                                                                                                                                                                );
+                                                                                                                                                                                                                                                                                                                });
