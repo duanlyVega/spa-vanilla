@@ -4,6 +4,7 @@
   "start_url": "./?utm_source=web_app_manifest",
   "scope": "./",
   "lang": "es-ES",
+  "orientation": "portrait",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#007bff",
