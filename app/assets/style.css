@@ -1,192 +1,191 @@
 html {
-      box-sizing: border-box;
-        font-family: "Raleway", sans-serif;
-          font-size: 16px;
-            line-height: 1.6;
-            }
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
 
-            *,
-            *::after,
-            *::before {
-              box-sizing: inherit;
-              }
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
 
-              body {
-                margin: 0;
-                  overflow-x: hidden;
-                    max-width: 800px;
-                      background-color: #fff;
-                      }
+body {
+  margin: 0;
+  overflow-x: hidden;
+  max-width: 800px;
+  background-color: #fff;
+}
 
-                      a:hover {
-                        color: #00b0ff;
-                        }
-                        h1 {
-                          text-align: center;
-                          }
-                          img {
-                            max-width: 100%;
-                              height: auto;
-                              }
-                              .error {
-                                padding: 1rem;
-                                  font-size: 150%;
-                                    font-weight: bold;
-                                      text-align: center;
-                                        color: #fff;
-                                          background-color: #dc3545;
-                                          }
-                                          .error mark {
-                                            padding: 0.5rem;
-                                              border-radius: 0.5rem;
-                                                display: inline-block;
-                                                  color: #fff;
-                                                    background-color: #01579b;
-                                                    }
-                                                    .form-search {
-                                                      margin: auto;
-                                                        text-align: center;
-                                                        }
+a:hover {
+  color: #00b0ff;
+}
+h1 {
+  text-align: center;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.error {
+  padding: 1rem;
+  font-size: 150%;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background-color: #dc3545;
+}
+.error mark {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  display: inline-block;
+  color: #fff;
+  background-color: #01579b;
+}
+.form-search {
+  margin: auto;
+  text-align: center;
+}
 
-                                                        .form-search input {
-                                                          display: block;
-                                                            margin: auto;
-                                                              padding: 0.25rem;
-                                                                border-radius: 0.25rem;
-                                                                  font-size: 1rem;
-                                                                  }
-                                                                  .grid-fluid {
-                                                                    margin: 1rem auto;
-                                                                      max-width: 100%;
-                                                                        display: grid;
-                                                                          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                                                                          }
-                                                                          body {
-                                                                            max-width: 100%;
-                                                                              height: 100%;
-                                                                              }
-                                                                              .header {
-                                                                                background-color: #fff;
-                                                                                  max-width: auto;
-                                                                                    padding: 0.5rem;
-                                                                                      position: sticky;
-                                                                                        top: 0;
-                                                                                          display: flex;
-                                                                                            flex-flow: column nowrap;
-                                                                                              align-items: center;
-                                                                                                text-align: center;
-                                                                                                }
+.form-search input {
+  display: block;
+  margin: auto;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+.grid-fluid {
+  margin: 1rem auto;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+body {
+  max-width: 100%;
+  height: 100%;
+}
+.header {
+  background-color: #fff;
+  max-width: auto;
+  padding: 0.5rem;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  text-align: center;
+}
 
-                                                                                                @media (max-width: 36rem) {
-                                                                                                  .header {
-                                                                                                      background-color: #fff;
-                                                                                                          max-width: auto;
-                                                                                                              padding: 0.5rem;
-                                                                                                                  position: relative;
-                                                                                                                      top: 0;
-                                                                                                                          display: flex;
-                                                                                                                              flex-flow: column nowrap;
-                                                                                                                                  align-items: center;
-                                                                                                                                      text-align: center;
-                                                                                                                                        }
-                                                                                                                                          .header nav {
-                                                                                                                                              display: flex;
-                                                                                                                                                  flex-flow: column wrap;
-                                                                                                                                                    }
+@media (max-width: 36rem) {
+  .header {
+    background-color: #fff;
+    max-width: auto;
+    padding: 0.5rem;
+    position: relative;
+    top: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    text-align: center;
+  }
+  .header nav {
+    display: flex;
+    flex-flow: column wrap;
+  }
 
-                                                                                                                                                      .grid-fluid {
-                                                                                                                                                          display: flex;
-                                                                                                                                                              flex-flow: column wrap;
-                                                                                                                                                                }
-                                                                                                                                                                  .body {
-                                                                                                                                                                      display: flex;
-                                                                                                                                                                          flex-flow: column wrap;
-                                                                                                                                                                              justify-content: space-between;
-                                                                                                                                                                                }
-                                                                                                                                                                                  .header nav {
-                                                                                                                                                                                      flex: 0 1 auto;
-                                                                                                                                                                                        }
-                                                                                                                                                                                          .post-card {
-                                                                                                                                                                                              display: flex;
-                                                                                                                                                                                                  flex-flow: column wrap;
-                                                                                                                                                                                                    }
-                                                                                                                                                                                                      main {
-                                                                                                                                                                                                          flex: 1 1 auto;
-                                                                                                                                                                                                            }
-                                                                                                                                                                                                            }
-                                                                                                                                                                                                            .header > * {
-                                                                                                                                                                                                              margin: 1rem auto;
-                                                                                                                                                                                                              }
+  .grid-fluid {
+    display: flex;
+    flex-flow: column wrap;
+  }
+  .body {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+  }
+  .header nav {
+    flex: 0 1 auto;
+  }
+  .post-card {
+    display: flex;
+    flex-flow: column wrap;
+  }
+  main {
+    flex: 1 1 auto;
+  }
+}
+.header > * {
+  margin: 1rem auto;
+}
 
-                                                                                                                                                                                                              .loader {
-                                                                                                                                                                                                                margin: 1rem auto;
-                                                                                                                                                                                                                  display: block;
-                                                                                                                                                                                                                    width: 4rem;
-                                                                                                                                                                                                                      height: 4rem;
-                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                      .post-card {
-                                                                                                                                                                                                                        margin: 1rem auto;
-                                                                                                                                                                                                                          padding: 1rem;
-                                                                                                                                                                                                                            width: 80%;
-                                                                                                                                                                                                                              background-color: #eceff1;
-                                                                                                                                                                                                                                display: flex;
-                                                                                                                                                                                                                                  flex-direction: column;
-                                                                                                                                                                                                                                  }
-                                                                                                                                                                                                                                  .post-card p {
-                                                                                                                                                                                                                                    display: flex;
-                                                                                                                                                                                                                                      justify-content: space-between;
-                                                                                                                                                                                                                                      }
+.loader {
+  margin: 1rem auto;
+  display: block;
+  width: 4rem;
+  height: 4rem;
+}
+.post-card {
+  margin: 1rem auto;
+  padding: 1rem;
+  width: 80%;
+  background-color: #eceff1;
+  display: flex;
+  flex-direction: column;
+}
+.post-card p {
+  display: flex;
+  justify-content: space-between;
+}
 
-                                                                                                                                                                                                                                      .post-page {
-                                                                                                                                                                                                                                        margin: 1rem auto;
-                                                                                                                                                                                                                                          padding: 1rem;
-                                                                                                                                                                                                                                            width: 80%;
-                                                                                                                                                                                                                                              background-color: #eceff1;
-                                                                                                                                                                                                                                                display: flex;
-                                                                                                                                                                                                                                                  flex-flow: column nowrap;
-                                                                                                                                                                                                                                                  }
+.post-page {
+  margin: 1rem auto;
+  padding: 1rem;
+  width: 80%;
+  background-color: #eceff1;
+  display: flex;
+  flex-flow: column nowrap;
+}
 
-                                                                                                                                                                                                                                                  .post-page > aside {
-                                                                                                                                                                                                                                                    margin: auto;
-                                                                                                                                                                                                                                                      width: 60%;
-                                                                                                                                                                                                                                                        text-align: center;
-                                                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                                                        .post-page > hr {
-                                                                                                                                                                                                                                                          border: thin solid #cfd8dc;
-                                                                                                                                                                                                                                                            margin: 2rem auto;
-                                                                                                                                                                                                                                                              width: 80%;
-                                                                                                                                                                                                                                                              }
-                                                                                                                                                                                                                                                              .post-page > time {
-                                                                                                                                                                                                                                                                margin: 1rem auto;
-                                                                                                                                                                                                                                                                  display: block;
-                                                                                                                                                                                                                                                                  }
+.post-page > aside {
+  margin: auto;
+  width: 60%;
+  text-align: center;
+}
+.post-page > hr {
+  border: thin solid #cfd8dc;
+  margin: 2rem auto;
+  width: 80%;
+}
+.post-page > time {
+  margin: 1rem auto;
+  display: block;
+}
 
-                                                                                                                                                                                                                                                                  .post-page > article {
-                                                                                                                                                                                                                                                                    padding: 0 2rem;
-                                                                                                                                                                                                                                                                    }
+.post-page > article {
+  padding: 0 2rem;
+}
 
-                                                                                                                                                                                                                                                                    .wp-block-csstricks-code-block {
-                                                                                                                                                                                                                                                                      background-color: #dc3545;
-                                                                                                                                                                                                                                                                        overflow: hidden;
-                                                                                                                                                                                                                                                                          white-space: nowrap;
-                                                                                                                                                                                                                                                                            max-width: 100%;
-                                                                                                                                                                                                                                                                            }
-                                                                                                                                                                                                                                                                            .language-html {
-                                                                                                                                                                                                                                                                        jjjj      overflow: hidden;
-                                                                                                                                                                                                                                                                                white-space: nowrap;
-                                                                                                                                                                                                                                                                                }
-                                                                                                                                                                                                                                                                                .post-page img,
-                                                                                                                                                                                                                                                                                .post-page figure,
-                                                                                                                                                                                                                                                                                .post-page code,
-                                                                                                                                                                                                                                                                                .post-page audio,
-                                                                                                                                                                                                                                                                                .post-page iframe,
-                                                                                                                                                                                                                                                                                .post-page video {
-                                                                                                                                                                                                                                                                                  margin: auto;
-                                                                                                                                                                                                                                                                                    display: block;
-                                                                                                                                                                                                                                                                                      max-width: 100%;
-                                                                                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                                                                                      blockquote.instagram-media {
-                                                                                                                                                                                                                                                                                        margin-left: auto !important;
-                                                                                                                                                                                                                                                                                          margin-right: auto !important;
-                                                                                                                                                                                                                                                                                          }
+.wp-block-csstricks-code-block {
+  background-color: #dc3545;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 100%;
+}
+.language-html {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.post-page img,
+.post-page figure,
+.post-page code,
+.post-page audio,
+.post-page iframe,
+.post-page video {
+  margin: auto;
+  display: block;
+  max-width: 100%;
+}
+blockquote.instagram-media {
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
