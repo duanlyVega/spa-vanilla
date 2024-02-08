@@ -9,11 +9,11 @@ export function ContactForm() {
       
 
 
-  // Agregar la clase "contact-form" al formulario
-  $form.classList.add("contact-form");
-
-  // Definir los estilos CSS dinámicos para el formulario
-  $styles.innerHTML = `
+      // Agregar la clase "contact-form" al formulario
+      $form.classList.add("contact-form");
+      
+      // Definir los estilos CSS dinámicos para el formulario
+      $styles.innerHTML = `
       /* Estilos CSS dinámicos */
       .contact-form {
         --form-ok-color: #4caf50;
@@ -87,7 +87,7 @@ export function ContactForm() {
           visibility: hidden;
           opacity: 0;
         }
-      
+        
         100% {
           visibility: visible;
           opacity: 1;
@@ -99,65 +99,67 @@ export function ContactForm() {
         grid-template-columns: repeat(3, 1fr);
       }
       
-  `;
+      `;
+      
+      // Definir el contenido HTML del formulario
+      
+      $form.innerHTML = `
+      <!-- Contenido del formulario HTML -->
+      <legend>Envíanos tus comentarios</legend>
+      <input
+      type="text"
+      name="name"
+      placeholder="Escribe tu nombre"
+      title="Nombre sólo acepta letras y espacios en blanco"
+      pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\\s]+$"
+      required
+      />
+      <input
+      type="email"
+      name="email"
+      placeholder="Escribe tu email"
+      title="Email incorrecto"
+      pattern="^[a-z0-9]+(\\.[_a-z0-9]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,15})$"
+      required
+      />
+      <input
+      type="hidden"
+      name="_subject"
+      placeholder="Asunto a tratar"
+      title="El Asunto es requerido"
+      required
+      />
+      <textarea
+      name="comments"
+      rows="5"
+      placeholder="Escribe tus comentarios"
+      title="Tu comentario no debe exceder los 255 caracteres"
+      data-pattern="^.{1,255}$"
+      required
+      ></textarea>
+      <input type="submit" value="Enviar" />
+      <input type="hidden" name="_template" value="basic">
+      <div class="contact-form-loader none">
+      <img src="app/assets/ball-triangle.svg" alt="Cargando..." />
+      </div>
+      <div class="contact-form-response none">
+      <p>Los datos han sido enviados</p>
+      </div>
+      `;
+      $fragment.appendChild($form)
+      console.log($fragment)
 
-  // Definir el contenido HTML del formulario
-  
-  $form.innerHTML = `
-  <!-- Contenido del formulario HTML -->
-  <legend>Envíanos tus comentarios</legend>
-  <input
-    type="text"
-    name="name"
-    placeholder="Escribe tu nombre"
-    title="Nombre sólo acepta letras y espacios en blanco"
-    pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\\s]+$"
-    required
-  />
-  <input
-    type="email"
-    name="email"
-    placeholder="Escribe tu email"
-    title="Email incorrecto"
-    pattern="^[a-z0-9]+(\\.[_a-z0-9]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,15})$"
-    required
-  />
-  <input
-    type="hidden"
-    name="_subject"
-    placeholder="Asunto a tratar"
-    title="El Asunto es requerido"
-    required
-  />
-  <textarea
-    name="comments"
-    rows="5"
-    placeholder="Escribe tus comentarios"
-    title="Tu comentario no debe exceder los 255 caracteres"
-    data-pattern="^.{1,255}$"
-    required
-  ></textarea>
-  <input type="submit" value="Enviar" />
-  <input type="hidden" name="_template" value="basic">
-  <div class="contact-form-loader none">
-    <img src="app/assets/ball-triangle.svg" alt="Cargando..." />
-  </div>
-  <div class="contact-form-response none">
-    <p>Los datos han sido enviados</p>
-  </div>
-  `;
-
-  // Función para validar el formulario
-  function validationForm() {
-      // Seleccionar el elemento de carga del formulario
-      const $loader = d.querySelector(".contact-form-loader"),
-          // Seleccionar el elemento de respuesta del formulario
-          $response = d.querySelector(".contact-form-response"),
-          // Seleccionar todos los campos obligatorios del formulario
-          $inputs = d.querySelectorAll(".contact-form [required]");
-
-      // Iterar sobre los campos obligatorios y agregar mensajes de error
-      $inputs.forEach((input) => {
+      // Función para validar el formulario
+      function validationForm() {
+        // Seleccionar el elemento de carga del formulario
+        const $loader = d.querySelector(".contact-form-loader"),
+        // Seleccionar el elemento de respuesta del formulario
+        $response = d.querySelector(".contact-form-response"),
+        // Seleccionar todos los campos obligatorios del formulario
+        $inputs = d.querySelectorAll(".contact-form [required]");
+        
+        // Iterar sobre los campos obligatorios y agregar mensajes de error
+        $inputs.forEach((input) => {
           const $span = d.createElement("span");
           $span.id = input.name;
           $span.textContent = input.title;
