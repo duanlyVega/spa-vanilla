@@ -185,6 +185,7 @@ export function ContactForm() {
               }
           }
       });
+      console.log($form)
 
       // Escuchar el evento de envío del formulario
       $form.addEventListener("submit", async (e) => {
