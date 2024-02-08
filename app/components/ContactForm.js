@@ -12,11 +12,135 @@ export function ContactForm() {
   // Definir los estilos CSS dinámicos para el formulario
   $styles.innerHTML = `
       /* Estilos CSS dinámicos */
+      .contact-form {
+        --form-ok-color: #4caf50;
+        --form-error-color: #f44336;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+      }
+      
+      .contact-form > * {
+        padding: 0.5rem;
+        margin: 1rem auto;
+        display: block;
+        width: 100%;
+      }
+      
+      .contact-form textarea {
+        resize: none;
+      }
+      
+      .contact-form legend,
+      .contact-form-response {
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+      }
+      
+      .contact-form input,
+      .contact-form textarea {
+        font-size: 1rem;
+        font-family: sans-serif;
+      }
+      
+      .contact-form input[type="submit"] {
+        width: 50%;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      
+      .contact-form *::placeholder {
+        color: #000;
+      }
+      
+      .contact-form [required]:user-valid {
+        border: thin solid var(--form-ok-color);
+      }
+      
+      .contact-form [required]:user-invalid {
+        border: thin solid var(--form-error-color);
+      }
+      
+      .contact-form-error {
+        margin-top: -1rem;
+        font-size: 80%;
+        background-color: var(--form-error-color);
+        color: #fff;
+        transition: all 800ms ease;
+      }
+      
+      .contact-form-error.is-active {
+        display: block;
+        animation: show-message 1s 1 normal 0s ease-out both;
+      }
+      
+      .none {
+        display: none;
+      }
+      
+      @keyframes show-message {
+        0% {
+          visibility: hidden;
+          opacity: 0;
+        }
+      
+        100% {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+      
+      .loading {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+      
   `;
 
   // Definir el contenido HTML del formulario
   $form.innerHTML = `
       <!-- Contenido del formulario HTML -->
+      <legend>Envíanos tus comentarios</legend>
+      <input
+        type="text"
+        name="name"
+        placeholder="Escribe tu nombre"
+        title="Nombre sólo acepta letras y espacios en blanco"
+        pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\\s]+$"
+        required
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="Escribe tu email"
+        title="Email incorrecto"
+        pattern="^[a-z0-9]+(\\.[_a-z0-9]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,15})$"
+        required
+      />
+      <input
+        type="hidden"
+        name="_subject"
+        placeholder="Asunto a tratar"
+        title="El Asunto es requerido"
+        required
+      />
+      <textarea
+        name="comments"
+        rows="5"
+        placeholder="Escribe tus comentarios"
+        title="Tu comentario no debe exceder los 255 caracteres"
+        data-pattern="^.{1,255}$"
+        required
+      ></textarea>
+      <input type="submit" value="Enviar" />
+      <input type="hidden" name="_template" value="basic">
+      <div class="contact-form-loader none">
+        <img src="app/assets/loader.svg" alt="Cargando" />
+      </div>
+      <div class="contact-form-response none">
+        <p>Los datos han sido enviados</p>
+      </div>
   `;
 
   // Función para validar el formulario
