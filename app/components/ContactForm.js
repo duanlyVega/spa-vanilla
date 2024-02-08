@@ -136,7 +136,7 @@ export function ContactForm() {
   <input type="submit" value="Enviar" />
   <input type="hidden" name="_template" value="basic">
   <div class="contact-form-loader none">
-    <img src="app/assets/loader.svg" alt="Cargando" />
+    <img src="app/assets/ball-triangle.svg" alt="Cargando..." />
   </div>
   <div class="contact-form-response none">
     <p>Los datos han sido enviados</p>
@@ -195,7 +195,7 @@ export function ContactForm() {
               $loader.classList.remove("none");
               try {
                   // Realizar una solicitud fetch al servidor
-                  const response = await fetch("https://formsubmit.co/ajax/thyronmiguelvegasantana@gmail.com", {
+                  const response = await fetch("https://formsubmit.co/ajax/kovihubo@mailgolem.com", {
                       method: "POST",
                       headers: {
                           "Content-Type": "application/json",
