@@ -146,8 +146,8 @@ export function ContactForm() {
       <p>Los datos han sido enviados</p>
       </div>
       `;
-      $fragment.appendChild($form)
-      console.log($fragment)
+      
+      
 
       // Función para validar el formulario
       function validationForm() {
@@ -192,6 +192,8 @@ export function ContactForm() {
           }
       });
       
+
+      $form.forEach(el=>{console.log(el)})
 
       // Escuchar el evento de envío del formulario
       $form.addEventListener("submit", async (e) => {
