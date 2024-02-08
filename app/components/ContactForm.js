@@ -111,7 +111,7 @@ export function ContactForm() {
       name="name"
       placeholder="Escribe tu nombre"
       title="Nombre sólo acepta letras y espacios en blanco"
-      pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\\s]+$"
+      pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
       required
       />
       <input
@@ -119,7 +119,7 @@ export function ContactForm() {
       name="email"
       placeholder="Escribe tu email"
       title="Email incorrecto"
-      pattern="^[a-z0-9]+(\\.[_a-z0-9]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,15})$"
+      pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
       required
       />
       <input
@@ -140,7 +140,7 @@ export function ContactForm() {
       <input type="submit" value="Enviar" />
       <input type="hidden" name="_template" value="basic">
       <div class="contact-form-loader none">
-      <img src="app/assets/ball-triangle.svg" alt="Cargando..." />
+      <img src="./app/assets/ball-triangle.svg" alt="Cargando..." />
       </div>
       <div class="contact-form-response none">
       <p>Los datos han sido enviados</p>
