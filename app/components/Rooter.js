@@ -60,14 +60,15 @@ export async function Rooter() {
       },
     });
   } else if (hash.includes("#/contact")) {
-    const formInstance = ContactForm()
+   $main.innerHTML = null;
     
-    $main.appendChild(formInstance)
+    $main.appendChild(ContactForm())
     
   } else {
     await Ajax({
       url: `${api.POST}?slug=${hash.slice(2)}`,
       cbSuccess: (post) => {
+
         $main.innerHTML = Post(post);
       },
     });

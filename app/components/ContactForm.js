@@ -4,7 +4,10 @@ export function ContactForm() {
       // Crear un elemento de formulario
       $form = d.createElement("form"),
       // Obtener el elemento que contiene los estilos dinámicos
+      $fragment = d.createDocumentFragment().textContent
       $styles = d.getElementById("dynamic-styles");
+      
+
 
   // Agregar la clase "contact-form" al formulario
   $form.classList.add("contact-form");
@@ -99,6 +102,7 @@ export function ContactForm() {
   `;
 
   // Definir el contenido HTML del formulario
+  
   $form.innerHTML = `
   <!-- Contenido del formulario HTML -->
   <legend>Envíanos tus comentarios</legend>
@@ -185,7 +189,7 @@ export function ContactForm() {
               }
           }
       });
-      console.log($form)
+      
 
       // Escuchar el evento de envío del formulario
       $form.addEventListener("submit", async (e) => {
@@ -195,7 +199,7 @@ export function ContactForm() {
               $loader.classList.remove("none");
               try {
                   // Realizar una solicitud fetch al servidor
-                  const response = await fetch("https://formsubmit.co/ajax/kovihubo@mailgolem.com", {
+                  const response = await fetch("https://formsubmit.co/ajax/ 35353a4dd0dec6109fb3", {
                       method: "POST",
                       headers: {
                           "Content-Type": "application/json",
