@@ -100,47 +100,47 @@ export function ContactForm() {
 
   // Definir el contenido HTML del formulario
   $form.innerHTML = `
-      <!-- Contenido del formulario HTML -->
-      <legend>Envíanos tus comentarios</legend>
-      <input
-        type="text"
-        name="name"
-        placeholder="Escribe tu nombre"
-        title="Nombre sólo acepta letras y espacios en blanco"
-        pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\\s]+$"
-        required
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="Escribe tu email"
-        title="Email incorrecto"
-        pattern="^[a-z0-9]+(\\.[_a-z0-9]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,15})$"
-        required
-      />
-      <input
-        type="hidden"
-        name="_subject"
-        placeholder="Asunto a tratar"
-        title="El Asunto es requerido"
-        required
-      />
-      <textarea
-        name="comments"
-        rows="5"
-        placeholder="Escribe tus comentarios"
-        title="Tu comentario no debe exceder los 255 caracteres"
-        data-pattern="^.{1,255}$"
-        required
-      ></textarea>
-      <input type="submit" value="Enviar" />
-      <input type="hidden" name="_template" value="basic">
-      <div class="contact-form-loader none">
-        <img src="app/assets/loader.svg" alt="Cargando" />
-      </div>
-      <div class="contact-form-response none">
-        <p>Los datos han sido enviados</p>
-      </div>
+  <!-- Contenido del formulario HTML -->
+  <legend>Envíanos tus comentarios</legend>
+  <input
+    type="text"
+    name="name"
+    placeholder="Escribe tu nombre"
+    title="Nombre sólo acepta letras y espacios en blanco"
+    pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\\s]+$"
+    required
+  />
+  <input
+    type="email"
+    name="email"
+    placeholder="Escribe tu email"
+    title="Email incorrecto"
+    pattern="^[a-z0-9]+(\\.[_a-z0-9]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,15})$"
+    required
+  />
+  <input
+    type="hidden"
+    name="_subject"
+    placeholder="Asunto a tratar"
+    title="El Asunto es requerido"
+    required
+  />
+  <textarea
+    name="comments"
+    rows="5"
+    placeholder="Escribe tus comentarios"
+    title="Tu comentario no debe exceder los 255 caracteres"
+    data-pattern="^.{1,255}$"
+    required
+  ></textarea>
+  <input type="submit" value="Enviar" />
+  <input type="hidden" name="_template" value="basic">
+  <div class="contact-form-loader none">
+    <img src="app/assets/loader.svg" alt="Cargando" />
+  </div>
+  <div class="contact-form-response none">
+    <p>Los datos han sido enviados</p>
+  </div>
   `;
 
   // Función para validar el formulario

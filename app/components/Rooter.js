@@ -59,9 +59,11 @@ export async function Rooter() {
         $main.innerHTML = html;
       },
     });
-  } else if (hash === "#/contact") {
-    html += ContactForm().innerHTML
-    $main.insertAdjacentHTML("afterend",html)
+  } else if (hash.includes("#/contact")) {
+    const formInstance = ContactForm()
+    
+    $main.appendChild(formInstance)
+    
   } else {
     await Ajax({
       url: `${api.POST}?slug=${hash.slice(2)}`,
