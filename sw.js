@@ -35,13 +35,7 @@ self.addEventListener("install", (e) => {
 self.addEventListener("activate", async (e) => {
   const cacheWhitelist = [CACHE_NAME];
 
-  try {
-    const options = {};
-    const subscription = await self.registration.pushManager.subscribe(options)
-    console.log(JSON.stringify(subscription))
-  } catch (error) {
-    console.log(error)
-  }
+
 
   e.waitUntil(
     caches

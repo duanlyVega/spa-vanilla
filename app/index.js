@@ -1,7 +1,7 @@
 import api from "./helpers/wp_api.js";
 import { App } from "./App.js";
 import { d, w } from "./helpers/utility.js";
-const registerServiceWorker = async () => {
+const registerServiceWorker = () => {
   if ("serviceWorker" in navigator) {
    const navegador = await navigator.serviceWorker
       .register("./sw.js")
@@ -11,33 +11,34 @@ const registerServiceWorker = async () => {
   }
   if ('PushManager' in window) {
     throw new Error('No Push API Support!')
+    
+   
   }
 
-  const requestNotificationPermission = async () => {
-    const permission = await window.Notification.requestPermission();
-    // value of permission can be 'granted', 'default', 'denied'
-    // granted: user has accepted the request
-    // default: user has dismissed the notification permission popup by clicking on x
-    // denied: user has denied the request.
-    if(permission !== 'granted'){
-        throw new Error('Permission not granted for Notification');
-    }
-}
-const permise = requestNotificationPermission()
+ 
+
 
  
 }
 
-
-
+const requestNotificationPermission = async () => {
+  const permission = await window.Notification.requestPermission();
+  // value of permission can be 'granted', 'default', 'denied'
+  // granted: user has accepted the request
+  // default: user has dismissed the notification permission popup by clicking on x
+  // denied: user has denied the request.
+  if(permission !== 'granted'){
+      throw new Error('Permission not granted for Notification');
+  }
+}
+ServiceWorkerRegistration()
+const permise = requestNotificationPermission().then(res=>{console.log(res)}).catch(err=>{console.log(err)})
 
 
 d.addEventListener("DOMContentLoaded", (e) => {
-  registerServiceWorker()
   App();
 });
 w.addEventListener("hashchange", () => {
   api.page = 1;
-  registerServiceWorker()
   App();
 });
