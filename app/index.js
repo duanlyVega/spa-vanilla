@@ -1,20 +1,23 @@
 import api from "./helpers/wp_api.js";
 import { App } from "./App.js";
 import { d, w } from "./helpers/utility.js";
-
-async function serviceWorker() {
+const registerServiceWorker = async () => {
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker
+   const navegador = await navigator.serviceWorker
       .register("./sw.js")
+      const res = navegador.pushManager
       .then((res) => console.log("Register services SW  ", res))
       .catch((err) => console.log("Error al tratar de registar el sw", err));
   }
-  if (!('PushManager' in window)) {
+  if ('PushManager' in window) {
     throw new Error('No Push API Support!')
   }
+ 
 }
 
-serviceWorker();
+
+
+
 
 d.addEventListener("DOMContentLoaded", (e) => {
   App();
