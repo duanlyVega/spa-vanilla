@@ -2,8 +2,8 @@ import { CreateErrorPage } from "./app/components/CreateErrorPage.js";
 
 const CACHE_NAME = "v1_cache_spa_vanilla",
   urlsToCache = [
-    "./index.html",
     "./",
+    "./index.html",
     "./app/assets/style.css",
     "./app/index.js",
     "./app/assets/ball-triangle.svg",
@@ -32,10 +32,8 @@ self.addEventListener("install", (e) => {
 });
 
 //una vez que se instala el SW, se activa y busca los recursos para hacer que funcione sin conexión
-self.addEventListener("activate", async (e) => {
+self.addEventListener("activate", (e) => {
   const cacheWhitelist = [CACHE_NAME];
-
-
 
   e.waitUntil(
     caches
@@ -90,9 +88,9 @@ self.addEventListener("fetch", (e) => {
         .catch((err) => {
           console.error("Error al realizar la solicitud:", err);
           // Aquí podrías retornar una página de error personalizada
-           // statico  return caches.match("./error.html") 
-           // dinamico 
-          return CreateErrorPage()
+          // statico  return caches.match("./error.html")
+          // dinamico
+          return CreateErrorPage();
         });
     })
   );
