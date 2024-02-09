@@ -1,3 +1,5 @@
+import { CreateErrorPage } from "./app/components/CreateErrorPage.js";
+
 const CACHE_NAME = "v1_cache_spa_vanilla",
   urlsToCache = [
     "./index.html",
@@ -86,6 +88,9 @@ self.addEventListener("fetch", (e) => {
         .catch((err) => {
           console.error("Error al realizar la solicitud:", err);
           // Aquí podrías retornar una página de error personalizada
+           // statico  return caches.match("./error.html") 
+           // dinamico 
+          return CreateErrorPage()
         });
     })
   );
