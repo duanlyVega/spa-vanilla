@@ -32,7 +32,7 @@ self.addEventListener("install", (e) => {
 });
 
 //una vez que se instala el SW, se activa y busca los recursos para hacer que funcione sin conexión
-self.addEventListener("activate", (e) => {
+self.addEventListener("activate", async (e) => {
   const cacheWhitelist = [CACHE_NAME];
 
   try {
