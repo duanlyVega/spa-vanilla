@@ -3,11 +3,11 @@ export function serviceWorker() {
       navigator.serviceWorker
         .register("./sw.js")
         .then((res) => {
+          res.installing.state ="installing";
           console.log("Register services SW  ", res)
-          res.installing = null;
           res.installing.onstatechange=()=>{
-            res.installing.state ="installing";
-          console.log("Register services SW  ", res)
+            res.installing = null;
+          //console.log("Register services SW  ", res)
 
           }
         })
