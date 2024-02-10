@@ -3,9 +3,10 @@ export function serviceWorker() {
       navigator.serviceWorker
         .register("./sw.js")
         .then((res) => {
-          res.installing.state = null;
+          res.installing.state = "installing";
+
           res.addEventListener=()=>{
-            res.installing.state = "installing";
+            res.installing.state = null;
             console.log(" Se a registrar el sw", res)
             
 
