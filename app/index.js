@@ -4,7 +4,8 @@ import { d, w } from "./helpers/utility.js";
 import { serviceWorker } from "./helpers/serviceWorker.js";
 
 
-serviceWorker()
+
+ServiceWorker()
 
 
 d.addEventListener("DOMContentLoaded",App)
