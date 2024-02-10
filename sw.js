@@ -56,9 +56,7 @@ self.addEventListener("activate", (e) => {
 // controlling service worker
 self.addEventListener("message", (e) => {
   // e.source is a client object
-  e.source.postMessage(`Hello! Your message was: ${e.data}`);
-  // Let's also post the type value back to the client
-  e.source.postMessage(e.source.type);
+  console.log(`Message received: ${e.data}`);
 });
 
 
