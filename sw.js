@@ -57,6 +57,7 @@ self.addEventListener("activate", (e) => {
 self.addEventListener("message", (e) => {
   // e.source is a client object
   console.log(`Message received: ${e.data}`);
+  e.source.postMessage("Hi client");
 });
 
 

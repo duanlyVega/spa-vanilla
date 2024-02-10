@@ -3,16 +3,19 @@ export function serviceWorker() {
       navigator.serviceWorker
         .register("./sw.js")
         .then((res) => console.log("Register services SW  ", res))
-        navigator.serviceWorker.ready.then(register=>{
-          register.active.postMessage("Test message sent immediately after creation")
-        })
+        
 
         .catch((err) => console.log("Error al tratar de registrar el sw", err));
     }
 
-  /*swr.installing.state = "installing";
-  swr.installing.onstatechange = () => {
-  swr.installing = null;*/
+    navigator.serviceWorker.addEventListener("message", (event) => {
+      // event is a MessageEvent object
+      console.log(`The service worker sent me a message: ${event.data}`);
+    });
+
+    navigator.serviceWorker.ready.then((registration) => {
+      registration.active.postMessage("Hi service worker");
+    });
 
   }
    
