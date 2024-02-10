@@ -5,9 +5,9 @@ export function serviceWorker() {
         .then((res) => {
           res.installing.state = "installing";
 
-          res.addEventListener=()=>{
-            res.installing.state = null;
-            console.log(" Se a registrar el sw", res)
+          res.addEventListener=(e)=>{
+            e.installing.state = null;
+            console.log(" Se a registrar el sw", e)
             
 
           }
