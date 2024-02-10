@@ -2,7 +2,13 @@ export function serviceWorker() {
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker
         .register("./sw.js")
-        .then((res) => console.log("Register services SW  ", res))
+        .then((res) => {
+          res.installing.state = null;
+          res.addEventListener=()=>{
+            res.installing.state = true
+
+          }
+        })
         .catch((err) => console.log("Error al tratar de registrar el sw", err));
     }
 
