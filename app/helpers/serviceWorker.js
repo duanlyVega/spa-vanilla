@@ -5,11 +5,13 @@ export function serviceWorker() {
         .then((res) => {
           res.installing.state = null;
           res.addEventListener=()=>{
-            res.installing.state = "installing"
+            res.installing.state = "installing";
+            console.log(" Se a registrar el sw", res)
+            
 
           }
         })
-        .catch((err) => console.log("Error al tratar de registrar el sw", err));
+        .catch((err) => console.error("Error al tratar de registrar el sw", err));
     }
 
 
