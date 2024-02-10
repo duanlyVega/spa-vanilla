@@ -7,7 +7,5 @@ export function serviceWorker() {
     }
 
 
-    if ('PushManager' in window) {
-        throw new Error('No Push API Support!')
-    }
+   
   }
