@@ -73,6 +73,10 @@ export async function Rooter() {
       },
     });
   }
+  if (hash.includes("#/about")) {
+    $main.innerHTML = `<h2>Sessction de Aserca de mi</h2>`
+    
+  }
 
   d.querySelector(".loader").style.display = "none";
 }

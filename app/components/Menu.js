@@ -12,6 +12,8 @@ export function Menu() {
   <a href="https://github.com/duanlyVega/spa-vanilla" target="_blank" rel="noopener">Github</a>
   <span>-</span>
   <a href="#/contact">Contacto</a>
+  <span>-</span>
+  <a href="#/about">Aserca de Mi</a>
 
 
   `;
