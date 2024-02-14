@@ -23,13 +23,9 @@ export async function Rooter() {
       cbSuccess: (posts) => {
         //console.log(posts);
         posts.forEach(
-          (post) => (html += PostCard(post)) , console.log(html)
+          (post) => (html += PostCard(post)) /*, console.log(html)*/
         );
 
-
-        if (html.length === 0) {
-          $main.innerHTML = `<h2>Error en Fetch ${html.length.toString() | `${html.length}` }</h2>`
-        }
         $main.innerHTML = html;
       },
     });
