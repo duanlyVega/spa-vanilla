@@ -2,7 +2,10 @@ import { dateFormat } from "../helpers/utility.js";
 
 export function Post(props) {
   //console.log(props);
-  let { title, content, date } = props[0];
+  let { title, content, date } = props?.[0];
+  console.log(props?.[0])
+  console.log(props[0])
+
   return `
   <section id="post-page">
     <aside>
