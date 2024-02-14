@@ -9,7 +9,7 @@ export function PostCard(props) {
 
   return `
     <article class="post-card">
-     <img src="${urlPost}" alt="${title.rendered}">
+     <img src="${urlPost}" alt="${title.rendered}" loading="lazy" >
      <h2>${title.rendered}</h2>
      <p>
       <time datetime="${dateFormat(date)}">${dateFormat(date)}</time>

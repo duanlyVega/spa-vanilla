@@ -23,8 +23,9 @@ export async function Rooter() {
       cbSuccess: (posts) => {
         //console.log(posts);
         posts.forEach(
-          (post) => (html += PostCard(post)) /*, console.log(html)*/
+          (post) => (html += PostCard(post)) , console.log(html)
         );
+
 
         $main.innerHTML = html;
       },
