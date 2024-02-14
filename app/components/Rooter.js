@@ -27,6 +27,9 @@ export async function Rooter() {
         );
 
 
+        if (html.length === 0) {
+          $main.innerHTML = `<h2>Error en Fetch ${html.length.toString() | `${html.length}` }</h2>`
+        }
         $main.innerHTML = html;
       },
     });
