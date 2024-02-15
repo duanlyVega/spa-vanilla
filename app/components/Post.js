@@ -3,8 +3,12 @@ import { dateFormat } from "../helpers/utility.js";
 export function Post(props) {
   //console.log(props);
   let { title, content, date } = props?.[0];
-  console.log(props?.[0])
-  console.log(props[0])
+  console.log(props?.[0].lenght)
+  console.log(props[0].lenght)
+
+  if (props?.[0].l.lenght >=3) {
+    alert("hola")
+  }
 
   return `
   <section id="post-page">
