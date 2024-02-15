@@ -6,7 +6,9 @@ export function Post(props) {
   console.log(props? props :props[0])
 
   if (props?.[0]) {
-    alert("hola")
+    console.log(props[0])
+    console.log(props)
+
   }
 
   return `
