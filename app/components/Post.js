@@ -3,8 +3,7 @@ import { dateFormat } from "../helpers/utility.js";
 export function Post(props) {
   //console.log(props);
   let { title, content, date } = props?.[0];
-  console.log(props?.[0].lenght)
-  console.log(props[0].lenght)
+  console.log(props? props :props[0])
 
   if (props?.[0]) {
     alert("hola")
