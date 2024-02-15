@@ -6,7 +6,7 @@ export function Post(props) {
   console.log(props?.[0].lenght)
   console.log(props[0].lenght)
 
-  if (!props?.[0]) {
+  if (props?.[0]) {
     alert("hola")
   }
 
