@@ -33,7 +33,7 @@ export async function infiniteScroll() {
       await Ajax({
         url: apiURL,
         cbSuccess: (posts) => {
-          console.log(posts);
+          //console.log(posts);
           if (!posts.length === 0) {
             return false;
           } else {

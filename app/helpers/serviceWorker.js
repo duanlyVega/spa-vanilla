@@ -1,4 +1,9 @@
 export function serviceWorker() {
+  const DOMAIN = "spa-duanly.netlify.app";
+  
+  if (location.host === DOMAIN) {
+   
+
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker
         .register("./sw.js")
@@ -14,8 +19,9 @@ export function serviceWorker() {
     });
 
     navigator.serviceWorker.ready.then((registration) => {
-      registration.active.postMessage("Hi service worker");
+      registration.active.postMessage("Hi service worker btk");
     });
+  }
 
   }
    
