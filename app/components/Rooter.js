@@ -75,7 +75,9 @@ export async function Rooter() {
     });
   }
   if (hash.includes("#/about")) {
-    $main.appendChild(PageAbout())
+    if($main.appendChild === false){
+      $main.appendChild(PageAbout())
+    }
     
   }
 
