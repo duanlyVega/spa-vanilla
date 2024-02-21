@@ -78,7 +78,7 @@ export async function Rooter() {
   
   console.log(PageAbout())
 
-  $main.appendChild(PageAbout())
+  $main.insertAdjacentElement("afterbegin",PageAbout())
     
   }
 

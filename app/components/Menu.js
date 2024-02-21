@@ -14,8 +14,6 @@ export function Menu() {
   <a href="#/contact">Contacto</a>
   <span>-</span>
   <a href="#/about">Aserca de Mi</a>
-
-
   `;
 
   return $menu;
