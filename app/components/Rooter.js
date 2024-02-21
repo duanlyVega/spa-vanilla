@@ -5,6 +5,7 @@ import { PostCard } from "./PostCard.js";
 import { Post } from "./Post.js";
 import { SearchCard } from "./SearchCard.js";
 import {ContactForm} from "./ContactForm.js"
+import {PageAbout} from "./PageAbout.js"
 export async function Rooter() {
   let { hash } = location;
 
@@ -74,7 +75,7 @@ export async function Rooter() {
     });
   }
   if (hash.includes("#/about")) {
-    $main.innerHTML = `<h2>Sessction de Aserca de mi</h2>`
+    $main.appendChild(PageAbout())
     
   }
 
