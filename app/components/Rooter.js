@@ -80,7 +80,7 @@ export async function Rooter() {
   console.log(PageAbout.outerHTML)
  
 
-  $main.appendChild(PageAbout().outerHTML)
+  $main.appendChild(PageAbout())
     
   }
 
