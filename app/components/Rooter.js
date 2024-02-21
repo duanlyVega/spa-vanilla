@@ -77,7 +77,7 @@ export async function Rooter() {
   if (hash.includes("#/about")) {
   
   console.log(PageAbout)
-  console.log(PageAbout.outerHTML)
+  console.log($main.appendChild(PageAbout()))
  
 
   $main.appendChild(PageAbout())
